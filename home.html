@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+<body>
+    <header>
+        <div  class="left-heading">
+            <div>
+                <span class="material-symbols-outlined">
+                 menu 
+                </span>
+            </div>
+            <div>
+                <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png" alt="">
+            </div>
+    
+            <div class="search-box">
+                <span class="material-symbols-outlined icon">
+                    search
+                </span>
+                <input type="text" name="" id="" placeholder="Search mail" class="input">
+
+                <a href="./gemini.html">
+                    
+                    <button id="gemini-button"><img src="./assets/Google Ai Gemini.svg" width="200px" alt=""></button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="right-heading">
+            <span class="material-symbols-outlined">
+                help
+            </span>
+            <span class="material-symbols-outlined">
+                settings
+            </span>
+            <span class="material-symbols-outlined">
+                apps
+            </span>
+            <span class="material-symbols-outlined">
+                account_circle
+            </span>
+        </div>
+    </header>
+
+    <main>
+        <div id="left-sidebar">
+            <button class="compose-btn">
+                <span class="material-symbols-outlined">
+                    edit
+                </span>
+                Compose
+            </button>
+
+            <br>
+
+            
+                <div class="leftside-tab" style="background:#d3e3fd">
+                    <span class="material-symbols-outlined" id="left-icon" style="background:#d3e3fd">
+                        inbox
+                    </span>
+                    <span style="background:#d3e3fd">Inbox</span>
+                </div>
+                <div class="leftside-tab">
+                    
+                        <span class="material-symbols-outlined" id="left-icon">
+                            star
+                        </span>
+                        <span>Starred</span>
+                   
+                </div>
+                <div class="leftside-tab">
+                    <span class="material-symbols-outlined" id="left-icon">
+                        schedule
+                    </span>
+                    <span>Snoozed</span>
+                </div>
+                <div class="leftside-tab">
+                    <span class="material-symbols-outlined" id="left-icon">
+                        send
+                    </span>
+                    <span>Sent</span>
+                </div>
+                <div class="leftside-tab">
+                    <span class="material-symbols-outlined" id="left-icon">
+                        draft
+                    </span>
+                    <span>Drafts</span>
+                </div>
+                <div class="leftside-tab">
+                    <span class="material-symbols-outlined" id="left-icon">
+                        expand_more
+                    </span>
+                    <span>More</span>
+                </div>
+            
+
+
+        </div>
+        <div id="mainbar">
+            <div  class="email-content">
+                <div class="mail-header">
+                    <input type="checkbox" name="" id="">
+                    <span class="material-symbols-outlined" id="left-icon">
+                        expand_more
+                    </span>
+                </div>
+                <span class="material-symbols-outlined">
+                    refresh
+                </span>
+                <span class="material-symbols-outlined">
+                    more_vert
+                </span>
+            </div>
+            
+
+            <div class="primary">
+                <div class="primary-tabs" style="border-bottom: 4px solid blue;">
+                    <span class="material-symbols-outlined" id="left-icon" >
+                        inbox
+                    </span>
+                    <span>Primary</span>
+                </div>
+                <div class="primary-tabs">
+                    <span class="material-symbols-outlined">
+                        sell
+                    </span>
+                    <span>Promotion</span>
+                </div>
+                <div class="primary-tabs">
+                    <span class="material-symbols-outlined">
+                        group
+                    </span>
+                    <span>Social</span>
+                </div>
+            </div>
+            <div id="mailss">
+                <div class="message-group-hidden">
+                    <div class="inbox-message-item-options">
+                        <button class="btn">
+                            <span class="material-symbols-outlined">
+                                archive
+                            </span>
+                        </button>
+                        <button class="btn delete-btn">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                        <button class="btn">
+                            <span class="material-symbols-outlined">
+                                mark_as_unread
+                            </span>
+                        </button>
+                        <button class="btn">
+                            <span class="material-symbols-outlined">
+                                snooze
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right-sidebar"></div>
+    </main>
+
+
+    <div id="compose-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>New Message</h2>
+            <input type="email" placeholder="To">
+            <input type="text" placeholder="Subject">
+            <textarea placeholder="Compose your email" style="height: 330px; width: 510px;" ></textarea>
+            <button class="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script src="./home.js"></script>
+</body>
+</html>

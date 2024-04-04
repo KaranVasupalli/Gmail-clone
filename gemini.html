@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Clone</title>
+    <link rel="stylesheet" href="./gemini.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hello user</h1>
+      <h2>How can I help you today?</h2>
+    </header>
+    <main>
+      <div class="msg-main">
+        <div class="msg-conatiner">
+          <div class="user-msg">User: Hello</div>
+          <div class="bot-msg" style="height: 30px">
+            Gemini: Hello, How I can assist You
+          </div>
+          <div class="middleContainer" ></div>
+        </div>
+      </div>
+
+      <div class="userinput-main">
+        <div class="user-input-div">
+          <input
+            type="text"
+            placeholder="Enter a prompt here"
+            class="user-input"
+            id="geminiInput"
+          />
+          <button class="btn" id="btn" >Search</button>
+        </div>
+      </div>
+    </main>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type ="module">
+      const geminiInput = document.getElementById("geminiInput");
+      const btn = document.getElementById("btn");
+      const middleContainer = document.querySelector(".middleContainer")
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+      let API_KEY = "AIzaSyBjRmNFFBrDbyJBVs989ILCOqcKI81HCS4";
+      const genAI = new GoogleGenerativeAI(API_KEY);
+
+      async function run(prompt) {
+        console.log(prompt);
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        console.log(text);
+        middleContainer.innerHTML = "";
+        let plainText = text
+          .replace(/\*\*(.*?)\*\*/g, "$1")
+          .replace(/\*(.*?)\*/g, "$1");
+          console.log(plainText);
+        middleContainer.innerHTML = `<pre>${plainText}</pre>`;
+      }
+
+      btn.addEventListener("click", () => {
+        let prompt = geminiInput.value;
+        run(prompt);
+      });
+    </script>
+  </body>
+</html>
